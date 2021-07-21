@@ -2,7 +2,7 @@ input.onButtonPressed(Button.A, function () {
     showAngle = true
     showDir = false
     music.playMelody("- G - - G - - G ", 320)
-    basic.showString("" + (input.compassHeading()))
+    basic.showString(" " + input.compassHeading())
     showDir = true
     showAngle = false
     music.playMelody("- C5 - - G - - D ", 320)
@@ -65,7 +65,7 @@ input.onButtonPressed(Button.B, function () {
     showAngle = true
     showDir = false
     music.playMelody("- G - - G - - G ", 320)
-    basic.showString("" + (input.compassHeading()))
+    basic.showString(" " + input.compassHeading())
     showDir = true
     showAngle = false
     music.playMelody("- C5 - - G - - D ", 320)
@@ -124,11 +124,13 @@ input.onButtonPressed(Button.B, function () {
         }
     }
 })
+// The compass direction will be on by default.
 let directions = ""
 let showAngle = false
 let showDir = false
 showDir = true
 showAngle = false
+// These are the compass preset, DON'T change any of this as it might screw the compass up.
 while (showDir == true) {
     if (input.compassHeading() > 337.5 && input.compassHeading() <= 360) {
         directions = "North"
