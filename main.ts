@@ -1,3 +1,4 @@
+// This press will transition the direction showing to the angles reading, then back again!
 input.onButtonPressed(Button.A, function () {
     showAngle = true
     showDir = false
@@ -5,6 +6,8 @@ input.onButtonPressed(Button.A, function () {
     basic.showString(" " + input.compassHeading())
     showDir = true
     showAngle = false
+    // After this, when you want the angle readings again, you  need to press the opposite buttons for it to work.
+    // Eg. If I pressed A before, I have to press B next to get another reading, and subsequently, if I have pressed B before, next time I have to press A to get the angle readings again. In loop of ABABABA...
     music.playMelody("- C5 - - G - - D ", 320)
     while (showDir == true) {
         if (input.compassHeading() > 337.5 && input.compassHeading() <= 360) {
@@ -130,7 +133,7 @@ let showAngle = false
 let showDir = false
 showDir = true
 showAngle = false
-// These are the compass preset, DON'T change any of this as it might screw the compass up.
+// These are the compass preset, DON'T change any of this as it might screw the compass reading up.
 while (showDir == true) {
     if (input.compassHeading() > 337.5 && input.compassHeading() <= 360) {
         directions = "North"
